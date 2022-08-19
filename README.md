@@ -11,15 +11,17 @@ The real performance depends on multiple factors, including your hardware, cooli
 
 Measure the TFLOPS for various micro-benchmarkings. Results are from running [micro_bench.ipynb](micro_bench.ipynb).
 
-|                           | A100 80GB |  A6000   | V100 16GB | 3090 Ti  |
-| ------------------------- | :-------: | :------: | :-------: | :------: |
-| Theory FP32 / FP16        | 20 / 312  | 39 / 150 | 16 / 125  | 40 / 160 |
-| MatMul FP32 / FP16        | 116 / 230 | 60 / 95  |  14 / 95  | 42 / 81  |
-| VectorMul                 |   0.202   |  0.082   |   0.098   |  0.107   |
-| Bert Layer Fwd / Fwd+Bwd  | 110 / 136 | 60 / 70  |  56 / 67  | 56 / 62  |
-| GPT-2 Layer Fwd / Fwd+Bwd |  45 / 53  | 35 / 38  |  34 / 37  | 37 / 39  |
-| T5 Encoder Fwd / Fwd+Bwd  |  44 / 56  | 34 / 41  |  33 / 40  | 36 / 41  |
-| T5 Decoder Fwd / Fwd+Bwd  |  38 / 47  | 28 / 34  |  28 / 34  | 30 / 36  |
+|                                        | A100 80GB |  A6000   | V100 16GB | 3090 Ti  |
+| -------------------------------------- | :-------: | :------: | :-------: | :------: |
+| Theory FP32 / FP16                     | 20 / 312  | 39 / 150 | 16 / 125  | 40 / 160 |
+| Memory (GB) / Bandwidth (GB/s)         | 80 / 2039 | 48 / 768 | 16 / 900  | 24 /1008 |
+| Approximate Price $                    |  16,000   |  4,000   |   3,500   |  1,500   |
+| Matrix Multiplication FP32 / FP16      | 116 / 230 | 60 / 95  |  14 / 95  | 42 / 81  |
+| Vector Multiplication                  |   0.202   |  0.082   |   0.098   |  0.107   |
+| Bert Layer Forward / Forward+Backward  | 110 / 136 | 60 / 70  |  56 / 67  | 56 / 62  |
+| GPT-2 Layer Forward / Forward+Backward |  45 / 53  | 35 / 38  |  34 / 37  | 37 / 39  |
+| T5 Encoder Forward / Forward+Backward  |  44 / 56  | 34 / 41  |  33 / 40  | 36 / 41  |
+| T5 Decoder Forward / Forward+Backward  |  38 / 47  | 28 / 34  |  28 / 34  | 30 / 36  |
 
 
 
