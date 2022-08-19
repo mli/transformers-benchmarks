@@ -4,8 +4,24 @@ We benchmark real [TeraFLOPS](https://en.wikipedia.org/wiki/FLOPS) that training
 
 The real performance depends on multiple factors, including your hardware, cooling, CUDA version, transformer models, hyper-parameters such as batch sizes, and implementations. We list the numbers we got on both personal PC and cloud instances. We also provide Jupyter notebooks for you to benchmark on your machines and workloads:
 
-- [Understanding BERT layer performance](micro_bench.ipynb)
+- [Understanding Transformer layer performance](micro_bench.ipynb)
 - [Training BERT and GPT-2 with (multi-)GPUs](transformers.ipynb)
+
+## Micro-Benchmarking Summary
+
+Measure the TFLOPS for various micro-benchmarkings. Results are from running [micro_bench.ipynb](micro_bench.ipynb).
+
+|                           | A100 80GB |  A6000   | V100 16GB | 3090 Ti  |
+| ------------------------- | :-------: | :------: | :-------: | :------: |
+| Theory FP32 / FP16        | 20 / 312  | 39 / 150 | 16 / 125  | 40 / 160 |
+| MatMul FP32 / FP16        | 116 / 230 | 60 / 95  |  14 / 95  | 42 / 81  |
+| VectorMul                 |   0.202   |  0.082   |   0.098   |  0.107   |
+| Bert Layer Fwd / Fwd+Bwd  | 110 / 136 | 60 / 70  |  56 / 67  | 56 / 62  |
+| GPT-2 Layer Fwd / Fwd+Bwd |  45 / 53  | 35 / 38  |  34 / 37  | 37 / 39  |
+| T5 Encoder Fwd / Fwd+Bwd  |  44 / 56  | 34 / 41  |  33 / 40  | 36 / 41  |
+| T5 Decoder Fwd / Fwd+Bwd  |  38 / 47  | 28 / 34  |  28 / 34  | 30 / 36  |
+
+
 
 ## Set Up
 
