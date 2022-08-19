@@ -4,7 +4,7 @@ We benchmark real [TeraFLOPS](https://en.wikipedia.org/wiki/FLOPS) that training
 
 The real performance depends on multiple factors, including your hardware, cooling, CUDA version, transformer models, hyper-parameters such as batch sizes, and implementations. We list the numbers we got on both personal PC and cloud instances. We also provide Jupyter notebooks for you to benchmark on your machines and workloads:
 
-- [Matrix multiplication](matmul.ipynb)
+- [Understanding BERT layer performance](micro_bench.ipynb)
 - [Training BERT and GPT-2 with (multi-)GPUs](transformers.ipynb)
 
 ## Set Up
