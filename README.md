@@ -11,17 +11,17 @@ The real performance depends on multiple factors, including your hardware, cooli
 
 Measure the TFLOPS for various micro-benchmarkings. Results are from running [micro_bench.ipynb](micro_bench.ipynb).
 
-|                                        | A100 80GB |  A6000   | V100 16GB | 3090 Ti  |
+|                                        | A100      |  A6000   | V100      | 3090 Ti  |
 | -------------------------------------- | :-------: | :------: | :-------: | :------: |
 | Theory FP32 / FP16                     | 20 / 312  | 39 / 150 | 16 / 125  | 40 / 160 |
-| Memory (GB) / Bandwidth (GB/s)         | 80 / 2039 | 48 / 768 | 16 / 900  | 24 /1008 |
+| Memory (GB) / Bandwidth (GB/s)         | 80 / 2039 | 48 / 768 | 32 / 900  | 24 /1008 |
 | Approximate Price $                    |  16,000   |  4,000   |   3,500   |  1,500   |
 | Matrix Multiplication FP32 / FP16      | 116 / 230 | 60 / 95  |  14 / 95  | 42 / 81  |
 | Vector Multiplication                  |   0.202   |  0.082   |   0.098   |  0.107   |
-| Bert Layer Forward / Forward+Backward  | 110 / 136 | 60 / 70  |  56 / 67  | 56 / 62  |
-| GPT-2 Layer Forward / Forward+Backward |  45 / 53  | 35 / 38  |  34 / 37  | 37 / 39  |
-| T5 Encoder Forward / Forward+Backward  |  44 / 56  | 34 / 41  |  33 / 40  | 36 / 41  |
-| T5 Decoder Forward / Forward+Backward  |  38 / 47  | 28 / 34  |  28 / 34  | 30 / 36  |
+| Bert Layer Forward / Forward+Backward  | 110 / 136 | 60 / 70  |  53 / 64  | 56 / 62  |
+| GPT-2 Layer Forward / Forward+Backward |  45 / 53  | 35 / 38  |  32 / 36  | 37 / 39  |
+| T5 Encoder Forward / Forward+Backward  |  44 / 56  | 34 / 41  |  31 / 38  | 36 / 41  |
+| T5 Decoder Forward / Forward+Backward  |  38 / 47  | 28 / 34  |  26 / 32  | 30 / 36  |
 
 
 
@@ -37,5 +37,15 @@ sudo docker run --gpus all -it --rm -p 8888:8888 -v ~:/workspace \
 
 After the docker is running, execute  `jupyter notebook` in the docker's shell to open this notebook.
 
+B
+If you 
 
+```bash
+sudo apt update
+sudo apt search nvidia-driver | grep nvidia-driver
+```
+
+```bash
+sudo apt install nvidia-driver-515
+```
 
