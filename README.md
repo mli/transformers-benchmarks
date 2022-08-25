@@ -27,25 +27,12 @@ Measure the TFLOPS for various micro-benchmarkings. Results are from running [mi
 
 ## Set Up
 
-You need a CUDA-enabled pytorch to run workloads. We recommend you to use the latest version CUDA and pytorch for better performance. One easy way is using  [nvidia docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker). Once installed, you can find latest tag of the [pytorch image](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch), for exmaple, `22.07-py3`, then run 
+You need a CUDA-enabled pytorch to run workloads. We recommend you to use the latest version CUDA and pytorch for better performance. One easy way is using [nvidia docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker). Once installed, you can find latest tag of the [pytorch image](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch), for exmaple, `22.07-py3`, then run 
 
 ```bash
 sudo docker run --gpus all -it --rm -p 8888:8888 -v ~:/workspace \
-	--ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \ 
+	--ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
 	nvcr.io/nvidia/pytorch:22.07-py3
 ```
 
 After the docker is running, execute  `jupyter notebook` in the docker's shell to open this notebook.
-
-B
-If you 
-
-```bash
-sudo apt update
-sudo apt search nvidia-driver | grep nvidia-driver
-```
-
-```bash
-sudo apt install nvidia-driver-515
-```
-
