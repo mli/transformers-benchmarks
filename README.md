@@ -13,7 +13,7 @@ Measure the TFLOPS for various micro-benchmarkings. Results are from running [mi
 
 |                                        | A100      |  A6000   | V100      | 3090 Ti  |
 | -------------------------------------- | :-------: | :------: | :-------: | :------: |
-| Theory FP32 / FP16                     | 20 / 312  | 39 / 150 | 16 / 125  | 40 / 160 |
+| Theory TF32(FP32) / FP16               | 156 / 312 | 75 / 150 | 16 / 125  | 80 / 160 |
 | Memory (GB) / Bandwidth (GB/s)         | 80 / 2039 | 48 / 768 | 32 / 900  | 24 /1008 |
 | Approximate Price $                    |  16,000   |  4,000   |   3,500   |  1,500   |
 | Matrix Multiplication FP32 / FP16      | 116 / 230 | 60 / 95  |  14 / 95  | 42 / 81  |
